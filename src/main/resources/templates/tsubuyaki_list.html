@@ -11,6 +11,13 @@
             [[${t.comment}]] -- [[${t.name}]] on [[${t.createdAt}]]
         </li>
     </ul>
+    
+    <form th:action="@{/search}" method="get">
+        <label for="searchKeyword">キーワード検索：</label>
+        <input type="text" name="keyword" id="searchKeyword" />
+        <input type="submit" value="検索" />
+    </form>
+    
     <h2>投稿する</h2>
     <form th:action="@{/read}" th:object="${tsubuyakiForm}" method="post">
         <label for="name">お名前：</label>
